@@ -1,11 +1,7 @@
 /**
  * Clase PrimeNumber
+ * @class PrimeNumber
  */
-
-type numbersPrime = {
-    n: number;
-    m: number;
-}
 
 export class PrimeNumber 
 {
@@ -33,7 +29,7 @@ export class PrimeNumber
     }
    
     /**
-     * esPRimo
+     * esPrimo
      * @param numero parametro tipo number
      * @returns devuelve si es true si el número es primo
      */
@@ -58,6 +54,30 @@ export class PrimeNumber
                 PrimeNumber.primeNumber.items.push(i);
             }
         }
+    }
+
+    /**
+     * setNMNUmbers
+     * @param n n numero inicial 
+     * @param m m numero final
+     */
+    setNMNumbers(n: number, m: number)
+    {
+        for(n; n < m; n++)
+        {
+            if(this.esPrimo(n))
+            {
+                PrimeNumber.primeNumber.items.push(n);
+            }
+        }
+    }
+
+    /**
+     * Resea el valor de items
+     */
+    resetItems()
+    {
+        PrimeNumber.primeNumber.items = [];
     }
 
 
