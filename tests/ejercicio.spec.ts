@@ -1,6 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
-import {productTable} from '../src/ejercicio-1';
+import {productTable} from '../src/ejercicio';
 
 describe('productTable function test', () => {
     it('productTable(n = 2) return [[1, 2], [2, 4]]', () => {
