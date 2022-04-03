@@ -1,24 +1,17 @@
 import 'mocha';
-import {expect} from 'chai';
-import { PrimeNumber } from '../src/ejercicio';
+import { expect } from 'chai';
+import {productTable} from '../src/ejercicio-1';
 
-describe('Pruebas para la clase PrimeNumber', () => {
-
-    const primeNumberN = PrimeNumber.getPrimeNumber();
-
-    it('Se implementa el método para n números', () => {
-        primeNumberN.setNNumbers(10);
-        expect(primeNumberN.getItems()).to.deep.eq([2,3,5,7]);
-        primeNumberN.resetItems();
-        primeNumberN.setNNumbers(3);
-        expect(primeNumberN.getItems()).to.deep.eq([2,3]);
+describe('productTable function test', () => {
+    it('productTable(n = 2) return [[1, 2], [2, 4]]', () => {
+        expect(productTable(2)).to.deep.equal([[1, 2], [2, 4]]);
     });
 
-    const primeNumberNM = PrimeNumber.getPrimeNumber();
-    it('Se implementa el método desde n hasta m números', () => {
-        primeNumberNM.resetItems();
-        primeNumberNM.setNMNumbers(5,10);
-        expect(primeNumberNM.getItems()).to.deep.eq([5,7]);
+    it('productTable(n = 3) return [[1, 2, 3], [2, 4, 6], [3, 6, 9]]', () => {
+        expect(productTable(3)).to.deep.equal([ [1, 2, 3], [2, 4, 6], [3, 6, 9] ]);
     });
 
+    it('productTable(n = 4) return [[1, 2, 3, 4], [2, 4, 6, 8], [3, 6, 9, 12], [4, 8, 12, 16]]', () => {
+        expect(productTable(4)).to.deep.equal([ [1, 2, 3, 4], [2, 4, 6, 8], [3, 6, 9, 12], [4, 8, 12, 16] ]);
+    });
 });
