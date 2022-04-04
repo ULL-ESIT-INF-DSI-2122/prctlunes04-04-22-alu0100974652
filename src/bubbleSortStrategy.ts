@@ -8,6 +8,7 @@ export class BubbleSort implements Strategy {
      * @param data 
      */
     execute(data: number[]) {
+        
       for(let i = 0; i < data.length; i++) {
           for(let j = 0; j < data.length - 1; j++) {
   
