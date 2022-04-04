@@ -31,14 +31,11 @@ describe('BubbleSort function test', () => {
         expect(mySolver4.getData()).to.deep.eq([1]);
     });
 
-    
-
     it('Se soluciona un array con el MergeSort', () => {
         const mySolver5 = new Solver([4,9,5,8,10], new BubbleSort());
         mySolver5.setStrategy(new BubbleSort());
         mySolver5.logic();
         expect(mySolver5.getData()).to.deep.eq([4,5,8,9,10]);
     });
-
 
 });
