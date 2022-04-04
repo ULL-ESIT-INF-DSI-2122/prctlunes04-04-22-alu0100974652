@@ -1,7 +1,8 @@
 import 'mocha';
 import { expect } from 'chai';
-import { Solver } from '../src/solver';
-import { BubbleSort } from '../src/bubbleSortStrategy';
+import { Solver } from '../src/solver/solver';
+import { BubbleSort } from '../src/algorithms/bubbleSortStrategy';
+//import { MergeSort } from '../src/mergeSortStrategy';
 
 describe('BubbleSort function test', () => {
     
@@ -18,6 +19,7 @@ describe('BubbleSort function test', () => {
     });
 
     const mySolver3 = new Solver([2,1], new BubbleSort());
+    mySolver3.setStrategy(new BubbleSort);
     it('Se soluciona un array3 con el BubbleSort', () => {
         mySolver3.logic();
         expect(mySolver3.getData()).to.deep.eq([1,2]);
@@ -28,4 +30,15 @@ describe('BubbleSort function test', () => {
         mySolver4.logic();
         expect(mySolver4.getData()).to.deep.eq([1]);
     });
+
+    
+
+    it('Se soluciona un array con el MergeSort', () => {
+        const mySolver5 = new Solver([4,9,5,8,10], new BubbleSort());
+        mySolver5.setStrategy(new BubbleSort());
+        mySolver5.logic();
+        expect(mySolver5.getData()).to.deep.eq([4,5,8,9,10]);
+    });
+
+
 });

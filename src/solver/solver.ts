@@ -1,4 +1,4 @@
-import { Strategy } from './interfaceStrategy';
+import { Strategy } from '../interface/interfaceStrategy';
 /**
  * Clase Solver
  */
@@ -8,23 +8,25 @@ export class Solver {
   }
 
   /**
-   * A setter is required in order to change the strategy in execution time
-   * @param strategy Current strategy applied
+   * Setter del patrón 
+   * @param strategy Algoritmo a aplicar
    */
   setStrategy(strategy: Strategy) {
     this.strategy = strategy;
   }
 
   /**
-   * The context delegates some work to the Strategy object
+   * Delega el trabajo
    */
   logic() {
     this.strategy.execute(this.data);
   }
 
+  /**
+   * Obtiene el array tipo number Getter
+   */
   getData() {
     return this.data;
   }
-
 }
 
